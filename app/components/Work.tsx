@@ -64,7 +64,7 @@ function ProjectCard({ p, big, col }: { p: Project; big: boolean; col: string })
         >
           {/* Watermark number */}
           <div
-            className="serif-h"
+            className="serif-h work-watermark"
             style={{
               position: 'absolute',
               top: -28,
@@ -81,7 +81,7 @@ function ProjectCard({ p, big, col }: { p: Project; big: boolean; col: string })
 
           {/* Title + tagline */}
           <div style={{ position: 'relative', zIndex: 2 }}>
-            <div className="serif-h" style={{ fontSize: big ? 66 : 50, lineHeight: 1 }}>
+            <div className="serif-h work-card-title" style={{ fontSize: big ? 66 : 50, lineHeight: 1 }}>
               {p.name}
             </div>
             <div className="kicker" style={{ color: 'var(--dark-dim)', marginTop: 12 }}>
@@ -177,6 +177,7 @@ export function Work() {
 
       {/* Project grid */}
       <div
+        className="work-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',

@@ -233,6 +233,7 @@ export function Contact() {
           }}
         >
           <div
+            className="contact-looking-for"
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr 2fr',
@@ -243,7 +244,7 @@ export function Contact() {
             <div className="kicker" style={{ color: 'var(--dark-dim)' }}>
               What I'm looking for
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            <div className="contact-looking-for-inner" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
               {LOOKING_FOR.map(({ title, body }, i) => (
                 <div key={i}>
                   <div className="serif-h" style={{ fontSize: 26, color: '#fafaf8' }}>{title}</div>

@@ -76,7 +76,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
             ← Back to index
           </Link>
           <span className="kicker">Case Study · {p.n} of 04</span>
-          <a href={`https://${p.url}`} target="_blank" rel="noopener noreferrer" className="kicker" style={{ color: 'var(--ink)' }}>
+          <a href={`https://${p.url}`} target="_blank" rel="noopener noreferrer" className="kicker cs-nav-visit" style={{ color: 'var(--ink)' }}>
             Visit {p.url} ↗
           </a>
         </div>
@@ -161,6 +161,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
         {/* Outcomes strip */}
         <Reveal
           delay={2}
+          className="cs-outcomes-grid"
           style={{
             marginTop: 56,
             paddingTop: 18,
@@ -185,6 +186,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
       {p.images?.hero && (
         <section style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '64px var(--pad-x) 0' }}>
           <div
+            className="cs-hero-visual"
             style={{
               height: 560,
               background: 'var(--invert-bg)',
@@ -196,7 +198,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
             }}
           >
             <div
-              className="serif-h"
+              className="serif-h cs-hero-watermark"
               style={{
                 position: 'absolute',
                 top: -60,
@@ -228,6 +230,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
 
       {/* ── Problem / Approach / Stack ── */}
       <section
+        className="cs-three-col"
         style={{
           maxWidth: 'var(--max-w)',
           margin: '0 auto',
@@ -277,6 +280,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
           What I shipped
         </div>
         <div
+          className="cs-three-col"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -300,7 +304,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
       {/* ── Secondary visual band ── */}
       {(p.images?.logo || p.images?.detail?.[0]) && (
         <section style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '80px var(--pad-x) 0' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+          <div className="cs-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {p.images?.logo && (
               <div
                 style={{
@@ -378,6 +382,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
           onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
         >
           <div
+            className="next-project-inner"
             style={{
               maxWidth: 'var(--max-w)',
               margin: '0 auto',

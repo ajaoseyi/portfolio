@@ -341,8 +341,21 @@ button {
     grid-template-columns: 1fr !important;
   }
 
+  /* About portrait: cap height on mobile */
+  .about-portrait {
+    max-height: 360px;
+  }
+
   /* Contact grid */
   .contact-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact: What I'm looking for */
+  .contact-looking-for {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-looking-for-inner {
     grid-template-columns: 1fr !important;
   }
 
@@ -359,5 +372,45 @@ button {
   /* Custom scrollbar hidden on mobile */
   .custom-scrollbar {
     display: none;
+  }
+
+  /* Work project grid */
+  .work-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .work-grid > * {
+    grid-column: 1 / -1 !important;
+  }
+  .work-watermark {
+    font-size: 160px !important;
+  }
+  .work-card-title {
+    font-size: clamp(28px, 8vw, 44px) !important;
+  }
+
+  /* Case study page */
+  .cs-nav-visit {
+    display: none !important;
+  }
+  .cs-hero-visual {
+    height: 260px !important;
+  }
+  .cs-hero-watermark {
+    display: none !important;
+  }
+  .cs-outcomes-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .cs-three-col {
+    grid-template-columns: 1fr !important;
+  }
+  .cs-two-col {
+    grid-template-columns: 1fr !important;
+  }
+  .next-project-inner {
+    grid-template-columns: 1fr !important;
+  }
+  .next-project-inner > * {
+    grid-column: 1 / -1 !important;
   }
 }
