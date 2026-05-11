@@ -105,6 +105,7 @@ function ProjectCard({ p, big, col }: { p: Project; big: boolean; col: string })
 
         {/* Meta row */}
         <div
+          className="work-card-meta"
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -113,7 +114,7 @@ function ProjectCard({ p, big, col }: { p: Project; big: boolean; col: string })
             gap: 16,
           }}
         >
-          <p style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: '#222', maxWidth: 460 }}>
+          <p className="work-card-desc" style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: '#222', maxWidth: 460 }}>
             {p.desc}
           </p>
           <div

@@ -387,6 +387,12 @@ button {
   .work-card-title {
     font-size: clamp(28px, 8vw, 44px) !important;
   }
+  .work-card-meta {
+    flex-direction: column !important;
+  }
+  .work-card-desc {
+    max-width: 100% !important;
+  }
 
   /* Case study page */
   .cs-nav-visit {
