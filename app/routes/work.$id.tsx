@@ -75,7 +75,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
           >
             ← Back to index
           </Link>
-          <span className="kicker">Case Study · {p.n} of 04</span>
+          <span className="kicker">Case Study · {p.n} of 05</span>
           <a href={`https://${p.url}`} target="_blank" rel="noopener noreferrer" className="kicker cs-nav-visit" style={{ color: 'var(--ink)' }}>
             Visit {p.url} ↗
           </a>
@@ -302,7 +302,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
       </section>
 
       {/* ── Secondary visual band ── */}
-      {(p.images?.logo || p.images?.detail?.[0]) && (
+      {(p.images?.logo || p.images?.detail?.length) && (
         <section style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '80px var(--pad-x) 0' }}>
           <div className="cs-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {p.images?.logo && (
@@ -324,8 +324,9 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
                 />
               </div>
             )}
-            {p.images?.detail?.[0] && (
+            {p.images?.detail?.map((src) => (
               <div
+                key={src}
                 style={{
                   height: 360,
                   background: 'var(--invert-bg)',
@@ -333,22 +334,13 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
                 }}
               >
                 <img
-                  src={p.images.detail[0]}
+                  src={src}
                   alt={`${p.name} detail`}
                   style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center top' }}
                 />
               </div>
-            )}
+            ))}
           </div>
-          {p.images?.detail?.[1] && (
-            <div style={{ marginTop: 16, height: 500, overflow: 'hidden' }}>
-              <img
-                src={p.images.detail[1]}
-                alt={`${p.name} feature detail`}
-                style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center top' }}
-              />
-            </div>
-          )}
         </section>
       )}
 
@@ -399,7 +391,7 @@ export default function CaseStudy({ loaderData }: { loaderData: Awaited<ReturnTy
             </div>
             <div style={{ gridColumn: 'span 6', textAlign: 'right' }}>
               <span className="kicker" style={{ mixBlendMode: 'difference', color: 'white' }}>
-                {next.n} of 04
+                {next.n} of 05
               </span>
             </div>
             <h2

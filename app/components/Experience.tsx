@@ -73,33 +73,52 @@ export function Experience() {
             </div>
 
             {/* Bullets */}
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {e.bullets.map((b, j) => (
-                <li
-                  key={j}
+            <div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {e.bullets.map((b, j) => (
+                  <li
+                    key={j}
+                    style={{
+                      fontSize: 16,
+                      lineHeight: 1.55,
+                      color: '#222',
+                      paddingLeft: 18,
+                      position: 'relative',
+                      marginBottom: 10,
+                    }}
+                  >
+                    <span
+                      style={{
+                        position: 'absolute',
+                        left: 0,
+                        top: 10,
+                        width: 8,
+                        height: 1,
+                        background: 'var(--ink)',
+                      }}
+                    />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              {e.productUrl && (
+                <a
+                  href={e.productUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="kicker"
                   style={{
-                    fontSize: 16,
-                    lineHeight: 1.55,
-                    color: '#222',
-                    paddingLeft: 18,
-                    position: 'relative',
-                    marginBottom: 10,
+                    display: 'inline-block',
+                    marginTop: 18,
+                    color: 'var(--ink)',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: 3,
                   }}
                 >
-                  <span
-                    style={{
-                      position: 'absolute',
-                      left: 0,
-                      top: 10,
-                      width: 8,
-                      height: 1,
-                      background: 'var(--ink)',
-                    }}
-                  />
-                  {b}
-                </li>
-              ))}
-            </ul>
+                  View product ↗
+                </a>
+              )}
+            </div>
           </Reveal>
         ))}
       </div>

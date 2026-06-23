@@ -104,17 +104,8 @@ function ProjectCard({ p, big, col }: { p: Project; big: boolean; col: string })
         </div>
 
         {/* Meta row */}
-        <div
-          className="work-card-meta"
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            marginTop: 16,
-            gap: 16,
-          }}
-        >
-          <p className="work-card-desc" style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: '#222', maxWidth: 460 }}>
+        <div className="work-card-meta" style={{ marginTop: 16 }}>
+          <p className="work-card-desc" style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: '#222' }}>
             {p.desc}
           </p>
           <div
@@ -122,8 +113,7 @@ function ProjectCard({ p, big, col }: { p: Project; big: boolean; col: string })
               display: 'flex',
               gap: 10,
               flexWrap: 'wrap',
-              justifyContent: 'flex-end',
-              flexShrink: 0,
+              marginTop: 14,
             }}
           >
             {p.stack.slice(0, 4).map((s) => (
@@ -160,7 +150,7 @@ export function Work() {
             textAlign: 'right',
           }}
         >
-          <span className="kicker">05 of 17 · 2022—2025</span>
+          <span className="kicker">05 of 17 · 2022—2026</span>
         </Reveal>
       </div>
 

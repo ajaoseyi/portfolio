@@ -36,6 +36,7 @@ export interface ExperienceItem {
   loc: string;
   dates: string;
   bullets: string[];
+  productUrl?: string;
 }
 
 export interface Post {
@@ -75,37 +76,8 @@ export const portfolio = {
 
   projects: [
     {
-      id: 'foodcourt',
-      n: '01',
-      cat: 'Food-Tech',
-      name: 'Foodcourt',
-      year: '2024',
-      role: 'Senior Frontend Engineer · Senior',
-      stack: ['React', 'TypeScript', 'Socket.IO', 'Paystack', 'TailwindCSS'],
-      desc: 'A comprehensive food-tech platform optimizing kitchen operations and customer experience. Real-time order management, payment integration, and analytics dashboard.',
-      tagline: 'Real-time orders for 200K monthly diners.',
-      problem: 'Kitchens were drowning in tablet alerts, paper tickets and three different POS apps. Order accuracy hovered at 91%; refund volume was eating margin.',
-      approach: 'I rebuilt the operator surface as a single Socket.IO-driven console — one screen, keyboard-first, with optimistic UI and a deterministic state machine for every order. Payments moved to Paystack with idempotent retries.',
-      outcomes: [
-        { v: '99.8%', k: 'payment success rate' },
-        { v: '40%', k: 'faster perceived load' },
-        { v: '200K', k: 'monthly orders served' },
-        { v: '91 → 99%', k: 'order accuracy' },
-      ],
-      highlights: [
-        'Architected a real-time order pipeline using Socket.IO with reconnection-safe event log.',
-        'Migrated 14 legacy class components to typed function components; cut bundle 28%.',
-        'Designed a kitchen display system used across 60+ locations.',
-      ],
-      url: 'www.getfoodcourt.com',
-      images: {
-        hero: '/images/foodcourt-hero.webp',
-        logo: '/images/foodcourt-logo.svg',
-      },
-    },
-    {
       id: 'soundturf',
-      n: '02',
+      n: '01',
       cat: 'Music / Entertainment',
       name: 'Soundturf',
       year: '2023',
@@ -136,9 +108,43 @@ export const portfolio = {
         ],
       },
     },
+      {
+      id: 'refine',
+      n: '05',
+      cat: 'AI / Productivity Tools',
+      name: 'Refine',
+      year: '2026',
+      role: 'Full-Stack Engineer · Solo Build',
+      stack: ['React', 'TypeScript', 'Vite', 'TipTap', 'Node.js', 'Express', 'LangChain', 'Socket.IO', 'Groq (Llama 3)', 'Google Docs API'],
+      desc: 'An AI-powered writing assistant that merges grammar and style correction with self-hosted SEO auditing and readability scoring, so writers can polish prose and optimize it for search without juggling separate tools.',
+      tagline: 'Write, polish, and rank — without leaving the editor.',
+      problem: 'Writers had to bounce between a grammar checker, a separate SEO auditing tool, and Google Docs to ship a piece that was both well-written and search-ready — every round trip risked edits falling out of sync between the source doc and whatever tool was open.',
+      approach: 'I built the editor in TipTap and wired it to a Node/Express backend where LangChain orchestrates a Groq-hosted Llama 3 model for grammar, sentence-structure, and keyword/heading analysis, alongside a self-hosted Flesch/Fog readability scorer. A Socket.IO layer keeps the editor and the Google Docs API in sync bidirectionally, so edits made in either surface update the other in real time.',
+      outcomes: [
+        { v: 'Single pass', k: 'grammar + SEO + readability' },
+        { v: 'Real-time', k: 'bidirectional Google Docs sync' },
+        { v: 'Llama 3', k: 'Groq-accelerated inference' },
+        { v: 'Zero', k: 'tool-switching to ship a draft' },
+      ],
+      highlights: [
+        'Built a LangChain-orchestrated backend that runs grammar, sentence-structure, and keyword-density analysis through a Groq-hosted Llama 3 model.',
+        'Implemented a self-hosted SEO and readability auditor — keyword density, heading hierarchy, and Flesch/Fog scoring — without relying on third-party SEO APIs.',
+        'Wired a Socket.IO-driven bidirectional sync with the Google Docs API so edits in the TipTap editor or the source doc never fall out of sync.',
+      ],
+      url: 'my-writing-assistant-production.up.railway.app',
+      images: {
+        hero: '/images/refine-mockup-one.png',
+        detail: [
+          '/images/refine-mockup-two.png',
+          '/images/refine-mockup-three.png',
+          '/images/refine-mockup-four.png',
+          '/images/refine-mockup-five.png',
+        ],
+      },
+    },
     {
       id: 'lingo',
-      n: '03',
+      n: '02',
       cat: 'Design Tools',
       name: 'Lingo',
       year: '2023',
@@ -167,7 +173,7 @@ export const portfolio = {
     },
     {
       id: 'buybox',
-      n: '04',
+      n: '03',
       cat: 'Tech Marketplace',
       name: 'Buybox',
       year: '2024',
@@ -195,7 +201,7 @@ export const portfolio = {
       },    },
     {
       id: 'void',
-      n: '05',
+      n: '04',
       cat: 'Media Agency',
       name: 'The Void',
       year: '2025',
@@ -221,6 +227,7 @@ export const portfolio = {
         logo: '/images/the-void-logo.png',
       },
     },
+  
   ] satisfies Project[],
 
   experience: [
@@ -234,6 +241,7 @@ export const portfolio = {
         'Architected real-time order management system using Socket.IO.',
         'Achieved 99.8% payment success rate with Paystack integration.',
       ],
+      productUrl: 'https://www.getfoodcourt.com',
     },
     {
       role: 'Frontend Engineer',
@@ -241,10 +249,11 @@ export const portfolio = {
       loc: 'Remote',
       dates: 'Jan 2024 — Apr 2025',
       bullets: [
-        'Maintained Lighthouse scores of 90+ across all projects.',
-        'Implemented blockchain payment solutions using Ethers.js.',
-        'Reduced bundle sizes by 30% through optimization strategies.',
+        'Built the frontend for VibesMeet, unifying digital content monetisation with physical and virtual event ticketing on one platform.',
+        'Shipped gated content, paid community access, and 1-on-1 experience flows so creators could monetise their following beyond a single revenue stream.',
+        'Implemented ticketing for meetups, workshops, and large conferences, turning an audience into real-world events.',
       ],
+      productUrl: 'https://www.vibesmeet.com/',
     },
     {
       role: 'Mobile & Dashboard Engineer',
@@ -256,6 +265,7 @@ export const portfolio = {
         'Developed the vendor dashboard in React — inventory, repair slot management, and same-day delivery queues.',
         'Collaborated with product and design to ship end-to-end device lifecycle features for 500+ verified vendors.',
       ],
+      productUrl: 'https://buybox.ng',
     },
   ] satisfies ExperienceItem[],
 
